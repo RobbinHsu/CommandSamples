@@ -68,5 +68,14 @@ namespace FakeDataLibrary
               "96500000000002015092919830912",
            };
         }
+
+        public static void CreateHeaderData()
+        {
+            _data = new List<string>()
+           {
+              "96500000000002015092919830912",
+              "9999889",
+           };
+        }
     }
 }
