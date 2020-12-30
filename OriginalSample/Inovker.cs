@@ -8,7 +8,6 @@ namespace OriginalSample
 {
     public class Inovker
     {
-        private readonly CheckSecondDateTimeCommand _checkSecondDateTimeCommand = new CheckSecondDateTimeCommand();
 
         public CheckResult Action(string source)
         {
@@ -18,7 +17,7 @@ namespace OriginalSample
             {
                 new CheckHeaderCommand(checker).Execute,
                 new CheckFirstDateTimeCommand(checker).Execute,
-                _checkSecondDateTimeCommand.Execute,
+                new CheckSecondDateTimeCommand(checker).Execute,
             };
 
             foreach (var command in commands)
