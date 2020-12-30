@@ -12,9 +12,9 @@ namespace CommandSample002
         {
             Invoker invoker = new Invoker();
             invoker.Compute("+", 50);
-            //invoker.Compute("-", 25);
-            //invoker.Compute("*", 20);
-            //invoker.Compute("/", 4);
+            invoker.Compute("-", 25);
+            invoker.Compute("*", 20);
+            invoker.Compute("/", 4);
             //Console.WriteLine("Undo");
             //invoker.Undo(3);
             //Console.WriteLine("Redo");

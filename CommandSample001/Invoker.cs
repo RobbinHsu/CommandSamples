@@ -13,9 +13,17 @@ namespace CommandSample002
 
         public Invoker()
         {
+            CreateOperations();
         }
 
         public void Compute(string myOperator, double operand)
+        {
+            _currentValue = _dictionary[myOperator].Invoke(operand);
+
+            Console.WriteLine($"{myOperator} {operand} 之後目前的值為 {_currentValue}");
+        }
+
+        private void CreateOperations()
         {
             _dictionary = new Dictionary<string, Func<double, double>>
             {
@@ -24,11 +32,6 @@ namespace CommandSample002
                 {"*", (x) => _currentValue * x},
                 {"/", (x) => _currentValue / x},
             };
-
-            _currentValue = _dictionary[myOperator].Invoke(operand);
-
-
-            Console.WriteLine($"{myOperator} {operand} 之後目前的值為 {_currentValue}");
         }
 
         public void Undo(int levels)
