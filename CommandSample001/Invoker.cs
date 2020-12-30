@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CommandSample002
 {
-    class Invoker
+   public class Invoker
     {
         public Invoker()
         {
