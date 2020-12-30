@@ -3,18 +3,15 @@ using System.Globalization;
 
 namespace OriginalSample
 {
-    public class CheckSecondDateTimeCommand
+    public class CheckSecondDateTimeCommand : CheckCommandBase
     {
-        private readonly FormatChecker _formatChecker = new FormatChecker();
-
-        public CheckSecondDateTimeCommand(FormatChecker checker)
+        public CheckSecondDateTimeCommand(FormatChecker checker) : base(checker)
         {
-            _formatChecker = checker;
         }
 
-        public bool Execute(string source)
+        public override bool Execute(string source)
         {
-            return _formatChecker.CheckSecondDateTime(source);
+            return Checker.CheckSecondDateTime(source);
         }
 
     }

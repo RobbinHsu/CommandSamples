@@ -3,19 +3,18 @@ using System.Globalization;
 
 namespace OriginalSample
 {
-    public class CheckFirstDateTimeCommand
+    public class CheckFirstDateTimeCommand : CheckCommandBase
     {
-        private readonly FormatChecker _formatChecker = new FormatChecker();
+        private readonly FormatChecker _formatChecker;
 
-        public CheckFirstDateTimeCommand(FormatChecker checker)
+        public CheckFirstDateTimeCommand(FormatChecker checker) : base(checker)
         {
             _formatChecker = checker;
         }
 
-        public bool Execute(string source)
+        public override bool Execute(string source)
         {
             return _formatChecker.CheckFirstDateTime(source);
         }
-
     }
 }

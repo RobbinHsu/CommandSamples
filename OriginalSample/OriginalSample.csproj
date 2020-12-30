@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckCommandBase.cs" />
     <Compile Include="CheckFirstDateTimeCommand.cs" />
     <Compile Include="CheckHeaderCommand.cs" />
     <Compile Include="CheckResult.cs" />
