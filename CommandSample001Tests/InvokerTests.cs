@@ -27,6 +27,14 @@ namespace CommandSample002.Tests
         }
 
         [Test()]
+        public void DivisionTest()
+        {
+            _invoker.Compute("+", 40);
+            _invoker.Compute("/", 5);
+            Assert.AreEqual(8, _invoker.GetValue());
+        }
+
+        [Test()]
         public void MultiplicationTest()
         {
             _invoker.Compute("+", 40);

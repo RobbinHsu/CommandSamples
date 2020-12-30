@@ -22,6 +22,7 @@ namespace CommandSample002
                 {"+", (x) => _currentValue + x},
                 {"-", (x) => _currentValue - x},
                 {"*", (x) => _currentValue * x},
+                {"/", (x) => _currentValue / x},
             };
 
             _currentValue = _dictionary[myOperator].Invoke(operand);
