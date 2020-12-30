@@ -19,7 +19,22 @@ namespace OriginalSample
         public CheckResult Check(string source)
         {
             var result = new CheckResult() { Source = source };
-            result.Result = Logic(result.Source);
+            var commands = new List<Func<string, bool>>()
+            {
+                Check965,
+                CheckFirstDateTime,
+                CheckSecondDateTime,
+            };
+
+            foreach (var command in commands)
+            {
+                result.Result = command(source);
+                if (result.Result == false)
+                {
+                    break;
+                }
+            }
+          
             return result;
         }
 
@@ -52,22 +67,6 @@ namespace OriginalSample
             if (d == DateTime.MinValue)
                 return false;
             return ans;
-        }
-
-        public bool Logic(string source) 
-        {
-            List<bool> result = new List<bool>();
-            int count = 0; 
-            result.Add(Check965(source));
-            result.Add(CheckFirstDateTime(source));
-            result.Add(CheckSecondDateTime(source));
-            foreach (var r in result) 
-            {
-                if (r == true) count++;
-            }
-            if (count == result.Count)
-                return true;
-            return false;
         }
     }
 }
