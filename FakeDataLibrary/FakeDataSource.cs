@@ -83,5 +83,13 @@ namespace FakeDataLibrary
                 "96500000000000000000000000000",
             };
         }
+
+        public static void CreateSecondDateTime()
+        {
+            _data = new List<string>()
+            {
+                "96500000000001988080800000000",
+            };
+        }
     }
 }

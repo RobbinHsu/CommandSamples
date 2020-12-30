@@ -38,6 +38,19 @@ namespace OriginalSample.Tests
         }
 
         [Test()]
+        public void CheckSecondDateTime()
+        {
+            Action lengthData = FakeDataSource.CreateSecondDateTime;
+            _actual = _commandSample.Command(lengthData);
+
+            var expected = new List<CheckResult>()
+            {
+                new CheckResult() {Source = "96500000000001988080800000000", Result = false},
+            };
+
+            expected.ToExpectedObject().ShouldEqual(_actual);
+        }
+        [Test()]
         public void CheckHeader()
         {
             Action headerData = FakeDataSource.CreateHeaderData;

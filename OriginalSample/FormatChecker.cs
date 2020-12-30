@@ -21,7 +21,12 @@ namespace OriginalSample
                     if (DateTime.TryParseExact(source.Substring(13, 8), "yyyyMMdd", CultureInfo.InvariantCulture,
                         DateTimeStyles.None, out firstDate))
                     {
-                        result.Result = true;
+                        DateTime secondDate;
+                        if (DateTime.TryParseExact(source.Substring(21, 8), "yyyyMMdd", CultureInfo.InvariantCulture,
+                            DateTimeStyles.None, out secondDate))
+                        {
+                            result.Result = true;
+                        }
                     }
                 }
             }
