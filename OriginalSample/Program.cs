@@ -11,12 +11,12 @@ namespace OriginalSample
     {
         static void Main(string[] args)
         {
-            var checker = new FormatChecker();
+            var checker = new Inovker();
             List<CheckResult> results = new List<CheckResult>();
 
             foreach (var item in FakeDataSource.Data)
             {
-                results.Add(checker.Check(item));
+                results.Add(checker.Action(item));
             }
 
             foreach (var item in results)
