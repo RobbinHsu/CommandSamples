@@ -11,10 +11,27 @@ namespace CommandSample002.Tests
     [TestFixture()]
     public class InvokerTests
     {
+        private FakeInvoker _invoker;
+
+        [SetUp]
+        public void Setup()
+        {
+            _invoker = new FakeInvoker();
+        }
+
         [Test()]
         public void ComputeTest()
         {
-            Assert.Fail();
+            _invoker.Compute("+", 50);
+            Assert.AreEqual(50, _invoker.GetValue());
+        }
+    }
+
+    public class FakeInvoker : Invoker
+    {
+        public double GetValue()
+        {
+            return _currentValue;
         }
     }
 }
