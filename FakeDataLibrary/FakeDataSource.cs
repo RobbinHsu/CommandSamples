@@ -74,5 +74,13 @@ namespace FakeDataLibrary
               "9999889",
            };
         }
+
+        public static void CreateFirstDateTime()
+        {
+            _data = new List<string>()
+            {
+                "96500000000002015092919830912",
+            };
+        }
     }
 }

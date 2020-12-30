@@ -22,6 +22,21 @@ namespace OriginalSample.Tests
             _commandSample = new CommandSample();
         }
 
+
+        [Test()]
+        public void CheckFirstDateTime()
+        {
+            Action lengthData = FakeDataSource.CreateFirstDateTime;
+            _actual = _commandSample.Command(lengthData);
+
+            var expected = new List<CheckResult>()
+            {
+                new CheckResult() {Source = "96500000000002015092919830912", Result = true},
+            };
+
+            expected.ToExpectedObject().ShouldEqual(_actual);
+        }
+
         [Test()]
         public void CheckHeader()
         {
