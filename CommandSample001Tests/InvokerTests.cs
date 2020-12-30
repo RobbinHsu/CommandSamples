@@ -25,6 +25,14 @@ namespace CommandSample002.Tests
             _invoker.Compute("+", 50);
             Assert.AreEqual(50, _invoker.GetValue());
         }
+
+        [Test()]
+        public void SubtractTest()
+        {
+            _invoker.Compute("+", 40);
+            _invoker.Compute("-", 25);
+            Assert.AreEqual(15, _invoker.GetValue());
+        }
     }
 
     public class FakeInvoker : Invoker

@@ -16,7 +16,17 @@ namespace CommandSample002
 
         public void Compute(string myOperator, double operand)
         {
-            _currentValue = _currentValue + operand;
+            if (myOperator == "+")
+            {
+                _currentValue = _currentValue + operand;
+            }
+
+            if (myOperator == "-")
+            {
+                _currentValue = _currentValue - operand;
+            }
+
+
             Console.WriteLine($"{myOperator} {operand} 之後目前的值為 {_currentValue}");
         }
 
