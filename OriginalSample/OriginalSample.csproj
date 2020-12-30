@@ -50,6 +50,7 @@
     <Compile Include="CheckSecondDateTimeCommand.cs" />
     <Compile Include="FormatChecker.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="IFormatChecker.cs" />
     <Compile Include="Invoker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
