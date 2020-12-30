@@ -43,7 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckFirstDateTimeCommand.cs" />
+    <Compile Include="CheckHeaderCommand.cs" />
     <Compile Include="CheckResult.cs" />
+    <Compile Include="CheckSecondDateTimeCommand.cs" />
+    <Compile Include="FormatChecker.cs" />
     <Compile Include="Inovker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
