@@ -14,10 +14,7 @@ namespace FakeDataLibrary
         public static List<string> _data;
         public static List<string> Data(Action createData)
         {
-            if (_data == null)
-            {
-                createData();
-            }
+            createData();
 
             return _data;
         }
