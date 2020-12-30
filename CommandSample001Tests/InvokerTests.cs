@@ -20,7 +20,7 @@ namespace CommandSample002.Tests
         }
 
         [Test()]
-        public void ComputeTest()
+        public void AddTest()
         {
             _invoker.Compute("+", 50);
             Assert.AreEqual(50, _invoker.GetValue());
