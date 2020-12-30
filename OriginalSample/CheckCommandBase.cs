@@ -2,9 +2,9 @@
 {
     public abstract class CheckCommandBase
     {
-        protected FormatChecker Checker { get; private set; }
+        protected IFormatChecker Checker { get; private set; }
 
-        protected CheckCommandBase(FormatChecker checker)
+        protected CheckCommandBase(IFormatChecker checker)
         {
             Checker = checker;
         }

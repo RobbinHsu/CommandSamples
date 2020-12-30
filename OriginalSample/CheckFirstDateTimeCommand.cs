@@ -5,9 +5,9 @@ namespace OriginalSample
 {
     public class CheckFirstDateTimeCommand : CheckCommandBase
     {
-        private readonly FormatChecker _formatChecker;
+        private readonly IFormatChecker _formatChecker;
 
-        public CheckFirstDateTimeCommand(FormatChecker checker) : base(checker)
+        public CheckFirstDateTimeCommand(IFormatChecker checker) : base(checker)
         {
             _formatChecker = checker;
         }

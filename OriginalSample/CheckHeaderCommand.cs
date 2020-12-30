@@ -2,9 +2,9 @@
 {
     public class CheckHeaderCommand : CheckCommandBase
     {
-        private readonly FormatChecker _formatChecker;
+        private readonly IFormatChecker _formatChecker;
 
-        public CheckHeaderCommand(FormatChecker checker) : base(checker)
+        public CheckHeaderCommand(IFormatChecker checker) : base(checker)
         {
             _formatChecker = checker;
         }

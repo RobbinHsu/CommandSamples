@@ -5,7 +5,7 @@ namespace OriginalSample
 {
     public class CheckSecondDateTimeCommand : CheckCommandBase
     {
-        public CheckSecondDateTimeCommand(FormatChecker checker) : base(checker)
+        public CheckSecondDateTimeCommand(IFormatChecker checker) : base(checker)
         {
         }
 
