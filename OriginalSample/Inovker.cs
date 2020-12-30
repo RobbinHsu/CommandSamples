@@ -8,7 +8,6 @@ namespace OriginalSample
 {
     public class Inovker
     {
-        private readonly CheckFirstDateTimeCommand _checkFirstDateTimeCommand = new CheckFirstDateTimeCommand();
         private readonly CheckSecondDateTimeCommand _checkSecondDateTimeCommand = new CheckSecondDateTimeCommand();
 
         public CheckResult Action(string source)
@@ -18,7 +17,7 @@ namespace OriginalSample
             var commands = new List<Func<string, bool>>()
             {
                 new CheckHeaderCommand(checker).Execute,
-                _checkFirstDateTimeCommand.Exectue,
+                new CheckFirstDateTimeCommand(checker).Execute,
                 _checkSecondDateTimeCommand.Execute,
             };
 
