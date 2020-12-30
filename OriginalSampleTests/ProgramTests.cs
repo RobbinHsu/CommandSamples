@@ -17,7 +17,8 @@ namespace OriginalSample.Tests
         public void CheckLength()
         {
             Action lengthData = FakeDataSource.CreateLengthData;
-            var actual = Program.Command(lengthData);
+            var commandSample = new CommandSample();
+            var actual = commandSample.Command(lengthData);
 
             var expected = new List<CheckResult>()
             {
