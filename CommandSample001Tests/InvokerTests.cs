@@ -27,6 +27,15 @@ namespace CommandSample002.Tests
         }
 
         [Test()]
+        public void MultiplicationTest()
+        {
+            _invoker.Compute("+", 40);
+            _invoker.Compute("-", 25);
+            _invoker.Compute("*", 25);
+            Assert.AreEqual(375, _invoker.GetValue());
+        }
+
+        [Test()]
         public void SubtractTest()
         {
             _invoker.Compute("+", 40);
