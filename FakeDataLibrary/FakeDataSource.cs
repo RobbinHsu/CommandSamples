@@ -11,18 +11,15 @@ namespace FakeDataLibrary
     /// </summary>
     public class FakeDataSource
     {
-        private static List<string> _data;
-        public static List<string> Data
+        public static List<string> _data;
+        public static List<string> Data(Action createData)
         {
-            get
+            if (_data == null)
             {
-                if (_data == null)
-                {
-                    CreateData();
-                }
-
-                return _data;
+                createData();
             }
+
+            return _data;
         }
 
         /// <summary>
@@ -31,7 +28,7 @@ namespace FakeDataLibrary
         ///  13~20 需為日期格式, 
         ///  21~28 需為日期格式,  
         /// </summary>
-        private static void CreateData()
+        public static void CreateData()
         {
             _data = new List<string>()
            {
@@ -62,6 +59,13 @@ namespace FakeDataLibrary
               "9999889",
               "96523009085172015092719900402",
               "96523009085172015092799999999"
+           };
+        }
+        public static void CreateLengthData()
+        {
+            _data = new List<string>()
+           {
+              "96500000000002015092919830912",
            };
         }
     }

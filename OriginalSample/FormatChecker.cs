@@ -6,20 +6,17 @@ using System.Threading.Tasks;
 
 namespace OriginalSample
 {
-    public class CheckResult
-    {
-        public string Source { get; set; }
-        public bool Result { get; set; }
-
-
-    }
     public class FormatChecker
     {
         public CheckResult Check(string source)
         {
             var result = new CheckResult() { Source = source };
 
-            
+            if (source.Length==29)
+            {
+                result.Result = true;
+            }
+
             return result;
         }
     }
