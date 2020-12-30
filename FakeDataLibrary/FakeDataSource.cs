@@ -80,7 +80,7 @@ namespace FakeDataLibrary
         {
             _data = new List<string>()
             {
-                "96500000000002015092919830912",
+                "96500000000000000000000000000",
             };
         }
     }
