@@ -10,11 +10,14 @@ namespace OriginalSample
     {
         public CheckResult Check(string source)
         {
-            var result = new CheckResult() { Source = source };
+            var result = new CheckResult() {Source = source};
 
-            if (source.Length==29)
+            if (source.Length == 29)
             {
-                result.Result = true;
+                if (source.Substring(0, 3) == "965")
+                {
+                    result.Result = true;
+                }
             }
 
             return result;

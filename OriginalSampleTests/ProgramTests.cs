@@ -45,8 +45,7 @@ namespace OriginalSample.Tests
 
             var expected = new List<CheckResult>()
             {
-                new CheckResult() {Source = "96500000000002015092919830912", Result = true},
-                new CheckResult() {Source = "9999889", Result = false},
+                new CheckResult() {Source = "00000000000002015092919830912", Result = false},
             };
 
             expected.ToExpectedObject().ShouldEqual(_actual);
