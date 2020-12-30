@@ -31,3 +31,13 @@ Action method 只能執行一個Command。
 結果如下
 
 ![Alt text](sample.png)
+
+## 簡易計算機實作  
+* 加法
+* 減法
+* 乘法
+* 除法
+* 具有執行和回復操作  
+
+結果如下
+![Alt text](caculator.png)
