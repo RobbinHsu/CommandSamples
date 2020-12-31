@@ -12,18 +12,20 @@ namespace CommandSample002.Tests
     public class InvokerTests
     {
         private FakeInvoker _invoker;
+        private FakeCalculator _calculator;
 
         [SetUp]
         public void Setup()
         {
-            _invoker = new FakeInvoker();
+            _calculator = new FakeCalculator();
+            _invoker = new FakeInvoker(_calculator);
         }
 
         [Test()]
         public void AddTest()
         {
             _invoker.Compute("+", 50);
-            Assert.AreEqual(50, _invoker.GetValue());
+            Assert.AreEqual(50, _calculator.GetValue());
         }
 
         [Test()]
@@ -31,7 +33,7 @@ namespace CommandSample002.Tests
         {
             _invoker.Compute("+", 40);
             _invoker.Compute("/", 5);
-            Assert.AreEqual(8, _invoker.GetValue());
+            Assert.AreEqual(8, _calculator.GetValue());
         }
 
         [Test()]
@@ -40,7 +42,7 @@ namespace CommandSample002.Tests
             _invoker.Compute("+", 40);
             _invoker.Compute("-", 25);
             _invoker.Compute("*", 25);
-            Assert.AreEqual(375, _invoker.GetValue());
+            Assert.AreEqual(375, _calculator.GetValue());
         }
 
         [Test()]
@@ -48,11 +50,28 @@ namespace CommandSample002.Tests
         {
             _invoker.Compute("+", 40);
             _invoker.Compute("-", 25);
-            Assert.AreEqual(15, _invoker.GetValue());
+            Assert.AreEqual(15, _calculator.GetValue());
+        }
+
+        [Test()]
+        public void UndoTest()
+        {
+            _invoker.Compute("+", 40);
+            _invoker.Undo(1);
+            Assert.AreEqual(0, _calculator.GetValue());
         }
     }
 
     public class FakeInvoker : Invoker
+    {
+        public FakeInvoker(Calculator calculator)
+        {
+            _calculator = calculator;
+        }
+
+    }
+
+    public class FakeCalculator : Calculator
     {
         public double GetValue()
         {
