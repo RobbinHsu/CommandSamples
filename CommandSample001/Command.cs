@@ -2,13 +2,13 @@
 
 namespace CommandSample001
 {
-    public class CalculatorCommand
+    public class Command : ICommand
     {
         private readonly Calculator _calculator;
         private readonly string _myOperator;
         private readonly double _operand;
 
-        public CalculatorCommand(Calculator calculator, string myOperator, double operand)
+        public Command(Calculator calculator, string myOperator, double operand)
         {
             _calculator = calculator;
             _myOperator = myOperator;

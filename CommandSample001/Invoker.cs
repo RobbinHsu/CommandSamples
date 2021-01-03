@@ -9,7 +9,7 @@ namespace CommandSample001
     {
         protected Calculator _calculator;
         private int _executeCount;
-        private List<CalculatorCommand> _historyCommands = new List<CalculatorCommand>();
+        private List<Command> _historyCommands = new List<Command>();
 
         public Invoker()
         {
@@ -18,7 +18,7 @@ namespace CommandSample001
 
         public void Compute(string myOperator, double operand)
         {
-            var command = new CalculatorCommand(_calculator, myOperator, operand);
+            var command = new Command(_calculator, myOperator, operand);
             command.Execute();
             _historyCommands.Add(command);
             _executeCount++;

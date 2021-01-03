@@ -44,7 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
-    <Compile Include="CalculatorCommand.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="ICommand.cs" />
     <Compile Include="Invoker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
