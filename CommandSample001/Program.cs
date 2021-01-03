@@ -17,8 +17,8 @@ namespace CommandSample001
             invoker.Compute("/", 4);
             Console.WriteLine("Undo");
             invoker.Undo(3);
-            //Console.WriteLine("Redo");
-            //invoker.Redo(2);
+            Console.WriteLine("Redo");
+            invoker.Redo(2);
 
             Console.ReadLine();
         }

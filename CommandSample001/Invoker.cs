@@ -37,6 +37,12 @@ namespace CommandSample001
 
         public void Redo(int levels)
         {
+            for (var i = 0; i < levels; i++)
+            {
+                var calculatorCommand = _historyCommands[_executeCount];
+                calculatorCommand.Execute();
+                _executeCount += 1;
+            }
         }
     }
 }

@@ -46,6 +46,18 @@ namespace CommandSample001.Tests
         }
 
         [Test()]
+        public void RedoTest()
+        {
+            _invoker.Compute("+", 50);
+            _invoker.Compute("-", 25);
+            _invoker.Compute("*", 20);
+            _invoker.Compute("/", 4);
+            _invoker.Undo(3);
+            _invoker.Redo(2);
+            Assert.AreEqual(500, _calculator.GetValue());
+        }
+
+        [Test()]
         public void SubtractTest()
         {
             _invoker.Compute("+", 40);
