@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CommandSample002
+namespace CommandSample001
 {
     public class Calculator
     {

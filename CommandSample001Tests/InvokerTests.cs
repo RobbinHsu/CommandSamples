@@ -1,18 +1,18 @@
 ﻿using NUnit.Framework;
-using CommandSample002;
+using CommandSample001;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommandSample002.Tests
+namespace CommandSample001.Tests
 {
     [TestFixture()]
     public class InvokerTests
     {
-        private FakeInvoker _invoker;
         private FakeCalculator _calculator;
+        private FakeInvoker _invoker;
 
         [SetUp]
         public void Setup()
@@ -57,7 +57,8 @@ namespace CommandSample002.Tests
         public void UndoTest()
         {
             _invoker.Compute("+", 40);
-            _invoker.Undo(1);
+            _invoker.Compute("*", 2);
+            _invoker.Undo(2);
             Assert.AreEqual(0, _calculator.GetValue());
         }
     }
@@ -68,7 +69,6 @@ namespace CommandSample002.Tests
         {
             _calculator = calculator;
         }
-
     }
 
     public class FakeCalculator : Calculator

@@ -1,4 +1,6 @@
-﻿namespace CommandSample002
+﻿using System.Collections.Generic;
+
+namespace CommandSample001
 {
     public class CalculatorCommand
     {
@@ -16,6 +18,23 @@
         public void Execute()
         {
             _calculator.Operate(_myOperator, _operand);
+        }
+
+        public void UnExecute()
+        {
+            _calculator.Operate(ReverseOperator(_myOperator), _operand);
+        }
+
+        private string ReverseOperator(string myOperator)
+        {
+            var lookupReverse = new Dictionary<string, string>()
+            {
+                {"+", "-"},
+                {"-", "+"},
+                {"*", "/"},
+                {"/", "*"},
+            };
+            return lookupReverse[myOperator];
         }
     }
 }
