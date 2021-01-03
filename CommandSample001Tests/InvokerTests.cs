@@ -24,54 +24,72 @@ namespace CommandSample001.Tests
         [Test()]
         public void AddTest()
         {
-            _invoker.Compute("+", 50);
-            Assert.AreEqual(50, _calculator.GetValue());
+            GivenOperatorAndValue("+", 50);
+            ShouldBeEqual(50);
         }
 
         [Test()]
         public void DivisionTest()
         {
-            _invoker.Compute("+", 40);
-            _invoker.Compute("/", 5);
-            Assert.AreEqual(8, _calculator.GetValue());
+            GivenOperatorAndValue("+", 40);
+            GivenOperatorAndValue("/", 5);
+            ShouldBeEqual(8);
         }
 
         [Test()]
         public void MultiplicationTest()
         {
-            _invoker.Compute("+", 40);
-            _invoker.Compute("-", 25);
-            _invoker.Compute("*", 25);
-            Assert.AreEqual(375, _calculator.GetValue());
+            GivenOperatorAndValue("+", 40);
+            GivenOperatorAndValue("*", 25);
+            ShouldBeEqual(1000);
         }
 
         [Test()]
         public void RedoTest()
         {
-            _invoker.Compute("+", 50);
-            _invoker.Compute("-", 25);
-            _invoker.Compute("*", 20);
-            _invoker.Compute("/", 4);
-            _invoker.Undo(3);
-            _invoker.Redo(2);
-            Assert.AreEqual(500, _calculator.GetValue());
+            GivenOperatorAndValue("+", 50);
+            GivenOperatorAndValue("-", 25);
+            GivenOperatorAndValue("*", 20);
+            GivenOperatorAndValue("/", 4);
+            Undo(3);
+            Redo(2);
+            ShouldBeEqual(500);
         }
 
         [Test()]
         public void SubtractTest()
         {
-            _invoker.Compute("+", 40);
-            _invoker.Compute("-", 25);
-            Assert.AreEqual(15, _calculator.GetValue());
+            GivenOperatorAndValue("-", 25);
+            ShouldBeEqual(-25);
         }
 
         [Test()]
         public void UndoTest()
         {
-            _invoker.Compute("+", 40);
-            _invoker.Compute("*", 2);
-            _invoker.Undo(2);
-            Assert.AreEqual(0, _calculator.GetValue());
+            GivenOperatorAndValue("+", 40);
+            GivenOperatorAndValue("*", 2);
+            Undo(2);
+            ShouldBeEqual(0);
+        }
+
+        private void Redo(int levels)
+        {
+            _invoker.Redo(levels);
+        }
+
+        private void Undo(int levels)
+        {
+            _invoker.Undo(levels);
+        }
+
+        private void GivenOperatorAndValue(string @operator, int operand)
+        {
+            _invoker.Compute(@operator, operand);
+        }
+
+        private void ShouldBeEqual(int expected)
+        {
+            Assert.AreEqual(expected, _calculator.GetValue());
         }
     }
 
